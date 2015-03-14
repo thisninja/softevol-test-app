@@ -14,7 +14,7 @@ header#banner.hero-unit
       div.list-group-container
         ul.list-group(ng-repeat='customer in customersData.customers track by $index')
           a(edit-customer="{{$index}}").list-group-item.customer-list
-            img(ng-src="//api.randomuser.me/portraits/thumb/{{customer.sex}}/{{$index}}.jpg").customer-image.pull-left
+            img(ng-src="http://api.randomuser.me/portraits/thumb/{{customer.sex}}/{{$index}}.jpg").customer-image.pull-left
             h1 {{customer.name}}
               div(delete-customer="{{$index}}").btn.pull-right
                 i.fa.fa-trash-o
