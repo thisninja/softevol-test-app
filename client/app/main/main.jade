@@ -1,0 +1,22 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+header#banner.hero-unit
+  .container
+    h1 Welcome to Demo App!
+    img(src='assets/images/customer.png', alt='Customer icon').img-circle.img-rounded-main
+
+.container
+  
+  .row
+    .col-lg-12
+      h1.page-header Customers:
+      input(type="text", placeholder="Search...").form-control
+      div.list-group-container
+        ul.list-group(ng-repeat='customer in customersData.customers track by $index')
+          a(edit-customer="{{$index}}").list-group-item.customer-list
+            img(ng-src="//api.randomuser.me/portraits/thumb/{{customer.sex}}/{{$index}}.jpg").customer-image.pull-left
+            h1 {{customer.name}}
+              div(delete-customer="{{$index}}").btn.pull-right
+                i.fa.fa-trash-o
+              
+div(ng-include='"components/footer/footer.html"')

@@ -1,0 +1,29 @@
+.modal-header
+    h3.modal-title Edit the customer
+.modal-body
+    .center-block
+        img(ng-src="//api.randomuser.me/portraits/med/{{customer.sex}}/{{index}}.jpg").customer-image.flex
+    form
+        label(for="customer-name") Name:
+        input(type="text" ng-model="customer.name" id="customer-name").form-control
+        label(for="customer-email") Email:
+        input(type="text" ng-model="customer.email" id="customer-email").form-control
+        label(for="customer-telephone") Telephone:
+        input(type="text" ng-model="customer.phone" id="customer-phone").form-control
+        label(for="customer-address") Address:
+        input(type="text" ng-model="customer.address" id="customer-address").form-control
+        label(for="customer-street") Street:
+        input(type="text" ng-model="customer.street" id="customer-street").form-control
+        label(for="customer-city") City:
+        input(type="text" ng-model="customer.city" id="customer-city").form-control
+        label(for="customer-state") State:
+        input(type="text" ng-model="customer.state" id="customer-state").form-control
+        label(for="customer-zip") Zip:
+        input(type="text" ng-model="customer.zip" id="customer-zip").form-control
+            
+
+.modal-footer
+    button.btn.btn-primary(ng-click='confirmEdition()') OK
+    button.btn.btn-warning(ng-click='cancel()') Cancel
+
+

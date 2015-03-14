@@ -1,0 +1,21 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.container
+	h1 Fill form below to create a new customer	
+	form(ng-submit="createCustomer(customerFields)").form-horizontal
+		div(ng-repeat="field in customerFields").form-group
+			label(for="customer-{{field.title | lowercase}}") {{field.title}}:
+
+			input( type="{{field.type}}" ng-model="field.value" ng-if="field.title !== 'Sex'" value="" id="customer-{{field.title | lowercase}}" placeholder="Add a customer's {{field.title | lowercase}}" required).form-control
+
+			div(ng-if="field.title == 'Sex'")
+				div.radio
+					label Male
+						input( type="{{field.type}}" ng-model="field.value" value="men" checked)
+				div.radio
+					label Female
+						input( type="{{field.type}}" ng-model="field.value" value="women" )
+
+		button.btn.btn-primary Save
+		
+div(ng-include='"components/footer/footer.html"')
