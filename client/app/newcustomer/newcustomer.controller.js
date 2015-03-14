@@ -13,7 +13,7 @@ angular.module('customersApp')
             'title': 'Email',
             'type': 'email'
         }, {
-            'title': 'Telephone',
+            'title': 'Phone',
             'pattern': '[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}$',
             'type': 'tel'
         }, {
@@ -30,6 +30,7 @@ angular.module('customersApp')
             'type': 'text'
         }, {
             'title': 'Zip',
+            'pattern': '[0-9]{5}',
             'type': 'text'
         }, ];
         $scope.createCustomer = function(model) {

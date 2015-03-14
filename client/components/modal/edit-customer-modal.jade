@@ -20,7 +20,7 @@
         label(for="customer-state") State:
         input(type="text" ng-model="customer.state" id="customer-state" required).form-control
         label(for="customer-zip") Zip:
-        input(type="text" ng-model="customer.zip" ng-change="" id="customer-zip" required).form-control
+        input(type="text" ng-model="customer.zip" pattern="[0-9]{5}" id="customer-zip" required).form-control
         .modal-footer
             button.btn.btn-primary(type="submit") OK
             button.btn.btn-warning(ng-click='cancel()') Cancel
