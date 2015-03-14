@@ -8,16 +8,16 @@ angular.module('customersApp')
             link: function($scope, elem, attrs) {
                 var index = attrs["deleteCustomer"];
                 elem.bind('click', function(e) {
-                        e.stopPropagation();
-                        $modal.open({
-                            templateUrl: 'components/modal/delete-customer-modal.html',
-                            controller: 'ModalInstanceCtrl',
-                            resolve: {
-			                    customer: function() {
-			                        return customersData.customers[index];
-			                    }
-                            }
-                        });
+                    e.stopPropagation();
+                    $modal.open({
+                        templateUrl: 'components/modal/delete-customer-modal.html',
+                        controller: 'ModalInstanceCtrl',
+                        resolve: {
+		                    customer: function() {
+		                         return customersData.customers[index];
+		                    }
+                        }
+                    });
                 })
             }
         }
@@ -29,16 +29,16 @@ angular.module('customersApp')
             link: function($scope, elem, attrs) {
                 var index = attrs["editCustomer"];
                 elem.bind('click', function(e) {
-                        e.stopPropagation();
-                        $modal.open({
-                            templateUrl: 'components/modal/edit-customer-modal.html',
-                            controller: 'ModalInstanceCtrl',
-                            resolve: {
-			                    customer: function() {
-			                        return customersData.customers[index];
-			                    }
-                            }
-                        });
+                    e.stopPropagation();
+                    $modal.open({
+                        templateUrl: 'components/modal/edit-customer-modal.html',
+                        controller: 'ModalInstanceCtrl',
+                        resolve: {
+		                    customer: function() {
+		                        return customersData.customers[index];
+		                    }
+                        }
+                    });
                 })
             }
         }
