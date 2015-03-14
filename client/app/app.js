@@ -5,6 +5,7 @@ angular.module('customersApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngAnimate',
   'ui.bootstrap'
 ])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

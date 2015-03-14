@@ -1,6 +1,8 @@
 angular.module('customersApp')
     .controller('ModalInstanceCtrl', ['customersData', 'httpService', '$scope', '$modalInstance', 'customer', '$http', function(customersData, httpService, $scope, $modalInstance, customer, $http) {
         $scope.customer = customer;
+        $scope.re = {};
+        $scope.re.one =  '^\d{1}-\d{3}-\d{3}-\d{4}$';
         $scope.clearCustomer = angular.copy($scope.customer);
         $scope.confirmEdition = function() {
         	httpService.update($scope.customer);

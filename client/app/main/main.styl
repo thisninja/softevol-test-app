@@ -6,7 +6,12 @@ selection(color)
     
 aqua = rgba(18, 233, 154, 0.5)
 selection(aqua)
-
+transition(animation)
+    -webkit-transition: animation
+    -moz-transition: animation
+    -ms-transition: animation
+    -o-transition: animation
+    transition: animation
 @media screen and (max-width: 768px)
     body
         min-width: 400px
@@ -29,8 +34,14 @@ img
         font-family: Sans-serif
     &:hover
         cursor: pointer
-        
-        
+.animated-list
+    &.ng-enter, &.ng-leave
+        transition(all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94))
+    &.ng-enter, &.ng-leave.ng-leave-active
+        opacity: 0
+    &.ng-leave, &.ng-enter.ng-enter-active
+        opacity: 1
+
 .customer-image
     border-radius: 50%;
     margin-right: 20px;

@@ -14,6 +14,7 @@ angular.module('customersApp')
             'type': 'email'
         }, {
             'title': 'Telephone',
+            'pattern': '[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}$',
             'type': 'tel'
         }, {
             'title': 'Address',

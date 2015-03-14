@@ -5,8 +5,10 @@ div(ng-include='"components/navbar/navbar.html"')
 	form(ng-submit="createCustomer(customerFields)").form-horizontal
 		div(ng-repeat="field in customerFields").form-group
 			label(for="customer-{{field.title | lowercase}}") {{field.title}}:
-
-			input( type="{{field.type}}" ng-model="field.value" ng-if="field.title !== 'Sex'" value="" id="customer-{{field.title | lowercase}}" placeholder="Add a customer's {{field.title | lowercase}}" required).form-control
+			div(ng-if="field.title == 'Telephone'")
+				p Please use this format <kbd>x-xxx-xxx-xxxx</kbd>
+				input(type="{{field.type}}" ng-model="field.value" value="" id="customer-{{field.title | lowercase}}" pattern="{{field.pattern}}" placeholder="Add a customer's {{field.title | lowercase}}" required).form-control
+			input( type="{{field.type}}" ng-model="field.value" ng-if="field.title !== 'Sex' && field.title !== 'Telephone'" value="" id="customer-{{field.title | lowercase}}" placeholder="Add a customer's {{field.title | lowercase}}" required).form-control
 
 			div(ng-if="field.title == 'Sex'")
 				div.radio

@@ -3,27 +3,26 @@
 .modal-body
     .center-block
         img(ng-src="//api.randomuser.me/portraits/med/{{customer.sex}}/{{index}}.jpg").customer-image.flex
-    form
+    form(ng-submit="confirmEdition()")
         label(for="customer-name") Name:
-        input(type="text" ng-model="customer.name" id="customer-name").form-control
+        input(type="text" ng-model="customer.name" id="customer-name" required).form-control
         label(for="customer-email") Email:
-        input(type="text" ng-model="customer.email" id="customer-email").form-control
+        input(type="email" ng-model="customer.email" id="customer-email" required).form-control
         label(for="customer-telephone") Telephone:
-        input(type="text" ng-model="customer.phone" id="customer-phone").form-control
+        p.pretty-description Please use this format <kbd>x-xxx-xxx-xxxx</kbd>
+        input(type="text" ng-model="customer.phone" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}$" id="customer-phone" required).form-control
         label(for="customer-address") Address:
-        input(type="text" ng-model="customer.address" id="customer-address").form-control
+        input(type="text" ng-model="customer.address" id="customer-address" required).form-control
         label(for="customer-street") Street:
-        input(type="text" ng-model="customer.street" id="customer-street").form-control
+        input(type="text" ng-model="customer.street" id="customer-street" required).form-control
         label(for="customer-city") City:
-        input(type="text" ng-model="customer.city" id="customer-city").form-control
+        input(type="text" ng-model="customer.city" id="customer-city" required).form-control
         label(for="customer-state") State:
-        input(type="text" ng-model="customer.state" id="customer-state").form-control
+        input(type="text" ng-model="customer.state" id="customer-state" required).form-control
         label(for="customer-zip") Zip:
-        input(type="text" ng-model="customer.zip" id="customer-zip").form-control
-            
-
-.modal-footer
-    button.btn.btn-primary(ng-click='confirmEdition()') OK
-    button.btn.btn-warning(ng-click='cancel()') Cancel
+        input(type="text" ng-model="customer.zip" ng-change="" id="customer-zip" required).form-control
+        .modal-footer
+            button.btn.btn-primary(type="submit") OK
+            button.btn.btn-warning(ng-click='cancel()') Cancel
 
 
